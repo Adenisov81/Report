@@ -45,7 +45,7 @@
     <Row Cell="A6:H6" Style="Header2">
       <Caption Cell="A6">Всего груза выдано (в тоннах)</Caption>
       <Values>
-        <Value Cell="B6" IsFormula="true">'Отчет за день'!Q5</Value>
+        <Value Cell="B6" IsFormula="true">'Отчет за день '!Q5</Value>
         <Value Cell="C6" IsFormula="true">ROUND(C7,0)+ROUND(C16,0)+ROUND(C23,0)</Value>
         <Value Cell="D6" IsFormula="true">ROUND(D7,0)+ROUND(D16,0)+ROUND(D23,0)</Value>
         <Value Cell="E6" IsFormula="true">B6-C6</Value>
