@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Report"
+    elementFormDefault="qualified"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+  <xs:element name="ReportData" type="ReportDataType"/>
+
+  <xs:complexType name="ReportDataType">
+    <xs:annotation>
+      <xs:documentation>Структура XML</xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element name="Common" type="BaseDataType">
+        <xs:annotation>
+          <xs:documentation>Данные за отчетный день</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PrevMonth" type="BaseDataType">
+        <xs:annotation>
+          <xs:documentation>Средние данные за предшедствующий месяц</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CurrentMonth" type="BaseDataType">
+        <xs:annotation>
+          <xs:documentation>Средние данные за текущий месяц</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:sequence minOccurs="0" maxOccurs="30">
+        <xs:annotation>
+          <xs:documentation>Данные за предшедствующие дни, с начала месяца</xs:documentation>
+        </xs:annotation>
+        <xs:element name="PrevDay" type="BaseDataType"></xs:element>
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="DateType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(0?[1-9]|[12][0-9]|3[01]).(0?[1-9]|1[012]).(19|20)?\d\d"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="BaseDataType">
+    <xs:annotation>
+      <xs:documentation>Базовый тип всех значений за период</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Date" type="DateType">
+        <xs:annotation>
+          <xs:documentation>Дата, за который данные, если месяц: любая дата месяца</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedAirCargoAeroflot" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано Вылетело на воздушных судах Груз Аэрофлот</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedAirCargoBridge" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано Вылетело на воздушных судах Груз AirBrigeCargo</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedAirCargoOther" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано Вылетело на воздушных судах Груз Другие авиакомпании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedAirMailAeroflot" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано Вылетело на воздушных судах Почта Аэрофлот</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedAirMailBridge" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано Вылетело на воздушных судах Почта AirBrigeCargo</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedAirMailOther" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано Вылетело на воздушных судах Почта Другие авиакомпании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedMoscowVVLAeroflot" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано клиентам в Москве ВВЛ Аэрофлот</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedMoscowVVLOther" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано клиентам в Москве ВВЛ Другие авиакомпании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedMoscowMVLAeroflot" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано клиентам в Москве МВЛ Аэрофлот</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedMoscowMVLOther" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано клиентам в Москве МВЛ Другие авиакомпании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedSVHAeroflotStock" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано на другие СВХ в Москве с рейсов Аэрофлот через склад</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedSVHAeroflotBoard" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано на другие СВХ в Москве с рейсов Аэрофлот из под борта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedSVHBridgeStock" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано на другие СВХ в Москвес рейсов AirBrigeCargo через склад</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedSVHBridgeBoard" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано на другие СВХ в Москвес рейсов AirBrigeCargo из под борта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedDepartureAeroflot" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано Обслужено рейсов по вылету Аэрофлот</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedDepartureBridge" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано Обслужено рейсов по вылету AirBrigeCargo</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuedDepartureOther" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Выдано Обслужено рейсов по вылету Другие авиакомпании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedAirCargoAeroflot" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило на воздушных судах Груз Аэрофлот</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedAirCargoBridgeImport" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило на воздушных судах Груз AirBrigeCargo Импорт Москва Карго</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedAirCargoOther" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило на воздушных судах Груз Другие авиакомпании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedAirMailAeroflot" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило на воздушных судах Почта Аэрофлот</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedAirMailBridge" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило на воздушных судах Почта AirBrigeCargo</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedAirMailOther" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило на воздушных судах Почта Другие авиакомпании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedMoscowVVLAeroflot" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило от клиентов в Москве ВВЛ Аэрофлот</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedMoscowVVLOther" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило от клиентов в Москве ВВЛ Другие авиакомпании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedMoscowMVLAeroflot" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило от клиентов в Москве МВЛ Аэрофлот</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedMoscowMVLOther" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило от клиентов в Москве МВЛ Другие авиакомпании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedSVHVVLAeroflot" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило с  других СВХ в Москве ВВЛ Аэрофлот</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedSVHVVLOther" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило с других СВХ в Москве ВВЛ Другие авиакомпании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedSVHMVLAeroflot" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило с других СВХ в Москве МВЛ Аэрофлот</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedSVHMVLOther" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило с других СВХ в Москве МВЛ Другие авиакомпании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedDepartureAeroflot" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило Обслужено рейсов по прилету Аэрофлот</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedDepartureBridge" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило Обслужено рейсов по прилету AirBrigeCargo</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivedDepartureOther" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Поступило Обслужено рейсов по прилету Другие авиакомпании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StockImportVVLReady" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Складские остатки Импортный груз ВВЛ Готов к выдаче</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StockImportVVLProcess" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Складские остатки Импортный груз ВВЛ В обработке на складе</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StockImportMVLReady" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Складские остатки Импортный груз МВЛ Готов к выдаче</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StockImportMVLProcess" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Складские остатки Импортный груз МВЛ В обработке на складе</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StockExportVVLTransfer" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Складские остатки Экспортный груз ВВЛ Трансферный груз</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StockExportVVLExport" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Складские остатки Экспортный груз ВВЛ Экспортный груз</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StockExportMVLTransfer" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Складские остатки Экспортный груз МВЛ Трансферный груз</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StockExportMVLExport" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Складские остатки Экспортный груз МВЛ Экспортный груз</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

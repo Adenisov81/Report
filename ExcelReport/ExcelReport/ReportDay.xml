@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ReportStructure>
+  <Name>Отчет за день</Name>
+  <Header>
+    <Row Cell="A1" Style="Header2">
+      <Caption Cell="A1">Грузооборот Москва Карго за</Caption>
+    </Row>
+    <Row Cell="A2" Style="Header2">
+      <Caption Cell="A2" Data="Common.Date">16.01.2018</Caption>
+    </Row>
+  </Header>
+  <Table Cell="A4:Q76">
+    <Row Cell="A4:Q4" Style="Header1">
+      <Caption Cell="A4">Общий грузоооборот</Caption>
+      <Values>
+        <Value Cell="Q4" IsFormula="true">Q5+Q33</Value>
+      </Values>
+    </Row>
+    <Row Cell="A5:Q5" Style="Header2">
+      <Caption Cell="A5">Всего груза выдано (в тоннах)</Caption>
+      <Values>
+        <Value Cell="Q5" IsFormula="true">ROUND(Q6,0)+ROUND(Q15,0)+ROUND(Q22,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A6:Q6" Style="Header3">
+      <Caption Cell="A6">Вылетело на воздушных судах</Caption>
+      <Values>
+        <Value Cell="Q6" IsFormula="true">ROUND(Q7,0)+ROUND(Q11,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A7:Q7" Style="Header4">
+      <Caption Cell="A7">Груз</Caption>
+      <Values>
+        <Value Cell="Q7" IsFormula="true">ROUND(Q8,0)+ROUND(Q9,0)+ROUND(Q10,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A8:Q8" Style="Header5">
+      <Caption Cell="A8">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q8" IsFormula="false" Data="Common.IssuedAirCargoAeroflot">0</Value>
+      </Values>
+    </Row>
+    <Row Cell="A9:Q9" Style="Header5">
+      <Caption Cell="A9">AirBrigeCargo</Caption>
+      <Values>
+        <Value Cell="Q9" IsFormula="false" Data="Common.IssuedAirCargoBridge">0</Value>
+      </Values>
+    </Row>
+    <Row Cell="A10:Q10" Style="Header5">
+      <Caption Cell="A10">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q10" IsFormula="false" Data="Common.IssuedAirCargoOther">0</Value>
+      </Values>
+    </Row>
+    <Row Cell="A11:Q11" Style="Header4">
+      <Caption Cell="A11">Почта</Caption>
+      <Values>
+        <Value Cell="Q11" IsFormula="true">ROUND(Q12,0)+ROUND(Q13,0)+ROUND(Q14,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A12:Q12" Style="Header5">
+      <Caption Cell="A12">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q12" IsFormula="false" Data="Common.IssuedAirMailAeroflot">54</Value>
+      </Values>
+    </Row>
+    <Row Cell="A13:Q13" Style="Header5">
+      <Caption Cell="A13">AirBrigeCargo</Caption>
+      <Values>
+        <Value Cell="Q13" IsFormula="false" Data="Common.IssuedAirMailBridge">45</Value>
+      </Values>
+    </Row>
+    <Row Cell="A14:Q14" Style="Header5">
+      <Caption Cell="A14">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q14" IsFormula="false" Data="Common.IssuedAirMailOther">56</Value>
+      </Values>
+    </Row>
+    <Row Cell="A15:Q15" Style="Header3">
+      <Caption Cell="A15">Выдано клиентам в Москве </Caption>
+      <Values>
+        <Value Cell="Q15" IsFormula="true">ROUND(Q16,0)+ROUND(Q19,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A16:Q16" Style="Header4">
+      <Caption Cell="A16">ВВЛ</Caption>
+      <Values>
+        <Value Cell="Q16" IsFormula="true">ROUND(Q17,0)+ROUND(Q18,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A17:Q17" Style="Header5">
+      <Caption Cell="A17">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q17" IsFormula="false" Data="Common.IssuedMoscowVVLAeroflot">43</Value>
+      </Values>
+    </Row>
+    <Row Cell="A18:Q18" Style="Header5">
+      <Caption Cell="A18">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q18" IsFormula="false" Data="Common.IssuedMoscowVVLOther">34</Value>
+      </Values>
+    </Row>
+    <Row Cell="A19:Q19" Style="Header4">
+      <Caption Cell="A19">МВЛ</Caption>
+      <Values>
+        <Value Cell="Q19" IsFormula="true">ROUND(Q20,0)+ROUND(Q21,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A20:Q20" Style="Header5">
+      <Caption Cell="A20">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q20" IsFormula="false" Data="Common.IssuedMoscowMVLAeroflot">78</Value>
+      </Values>
+    </Row>
+    <Row Cell="A21:Q21" Style="Header5">
+      <Caption Cell="A21">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q21" IsFormula="false" Data="Common.IssuedMoscowMVLOther">34</Value>
+      </Values>
+    </Row>
+    <Row Cell="A22:Q22" Style="Header3">
+      <Caption Cell="A22">Выдано на другие СВХ в Москве</Caption>
+      <Values>
+        <Value Cell="Q22" IsFormula="true">ROUND(Q23,0)+ROUND(Q26,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A23:Q23" Style="Header4">
+      <Caption Cell="A23">с рейсов Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q23" IsFormula="true">ROUND(Q24,0)+ROUND(Q25,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A24:Q24" Style="Header5">
+      <Caption Cell="A24">через склад</Caption>
+      <Values>
+        <Value Cell="Q24" IsFormula="false" Data="Common.IssuedSVHAeroflotStock">56</Value>
+      </Values>
+    </Row>
+    <Row Cell="A25:Q25" Style="Header5">
+      <Caption Cell="A25">из под борта</Caption>
+      <Values>
+        <Value Cell="Q25" IsFormula="false" Data="Common.IssuedSVHAeroflotBoard">23</Value>
+      </Values>
+    </Row>
+    <Row Cell="A26:Q26" Style="Header4">
+      <Caption Cell="A26">с рейсов AirBrigeCargo</Caption>
+      <Values>
+        <Value Cell="Q26" IsFormula="true">ROUND(Q27,0)+ROUND(Q28,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A27:Q27" Style="Header5">
+      <Caption Cell="A27">через склад</Caption>
+      <Values>
+        <Value Cell="Q27" IsFormula="false" Data="Common.IssuedSVHBridgeStock">67</Value>
+      </Values>
+    </Row>
+    <Row Cell="A28:Q28" Style="Header5">
+      <Caption Cell="A28">из под борта</Caption>
+      <Values>
+        <Value Cell="Q28" IsFormula="false" Data="Common.IssuedSVHBridgeBoard">67</Value>
+      </Values>
+    </Row>
+    <Row Cell="A29:Q29" Style="Header3">
+      <Caption Cell="A29">Обслужено рейсов по вылету</Caption>
+      <Values>
+        <Value Cell="Q29" IsFormula="true">Q31+Q30+Q32</Value>
+      </Values>
+    </Row>
+    <Row Cell="A30:Q30" Style="Header5">
+      <Caption Cell="A30">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q30" IsFormula="false" Data="Common.IssuedDepartureAeroflot">78</Value>
+      </Values>
+    </Row>
+    <Row Cell="A31:Q31" Style="Header5">
+      <Caption Cell="A31">AirBrigeCargo</Caption>
+      <Values>
+        <Value Cell="Q31" IsFormula="false" Data="Common.IssuedDepartureBridge">45</Value>
+      </Values>
+    </Row>
+    <Row Cell="A32:Q32" Style="Header5">
+      <Caption Cell="A32">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q32" IsFormula="false" Data="Common.IssuedDepartureOther">54</Value>
+      </Values>
+    </Row>
+    <Row Cell="A33:Q33" Style="Header2">
+      <Caption Cell="A33">Всего груза поступило (в тоннах)</Caption>
+      <Values>
+        <Value Cell="Q33" IsFormula="true">ROUND(Q34,0)+ROUND(Q44,0)+ROUND(Q51,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A34:Q34" Style="Header3">
+      <Caption Cell="A34">Прилетело на воздушных судах</Caption>
+      <Values>
+        <Value Cell="Q34" IsFormula="true">ROUND(Q35,0)+ROUND(Q40,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A35:Q35" Style="Header4">
+      <Caption Cell="A35">Груз</Caption>
+      <Values>
+        <Value Cell="Q35" IsFormula="true">ROUND(Q36,0)+ROUND(Q37,0)+ROUND(Q39,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A36:Q36" Style="Header5">
+      <Caption Cell="A36">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q36" IsFormula="false" Data="Common.ReceivedAirCargoAeroflot">67</Value>
+      </Values>
+    </Row>
+    <Row Cell="A37:Q37" Style="Header5">
+      <Caption Cell="A37">AirBrigeCargo</Caption>
+      <Values>
+        <Value Cell="Q37" IsFormula="true">ROUND(Q26,0)+ROUND(Q38,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A38:Q38" Style="Header6">
+      <Caption Cell="A38">справочно: в т.ч. Импорт Москва Карго</Caption>
+      <Values>
+        <Value Cell="Q38" IsFormula="false" Data="Common.ReceivedAirCargoBridgeImport">54</Value>
+      </Values>
+    </Row>
+    <Row Cell="A39:Q39" Style="Header5">
+      <Caption Cell="A39">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q39" IsFormula="false" Data="Common.ReceivedAirCargoOther">34</Value>
+      </Values>
+    </Row>
+    <Row Cell="A40:Q40" Style="Header4">
+      <Caption Cell="A40">Почта</Caption>
+      <Values>
+        <Value Cell="Q40" IsFormula="true">ROUND(Q41,0)+ROUND(Q42,0)+ROUND(Q43,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A41:Q41" Style="Header5">
+      <Caption Cell="A41">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q41" IsFormula="false" Data="Common.ReceivedAirMailAeroflot">33</Value>
+      </Values>
+    </Row>
+    <Row Cell="A42:Q42" Style="Header5">
+      <Caption Cell="A42">Всего груза выдано (в тоннах)</Caption>
+      <Values>
+        <Value Cell="Q42" IsFormula="false" Data="Common.ReceivedAirMailBridge">78</Value>
+      </Values>
+    </Row>
+    <Row Cell="A43:Q43" Style="Header5">
+      <Caption Cell="A43">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q43" IsFormula="false" Data="Common.ReceivedAirMailOther">28</Value>
+      </Values>
+    </Row>
+    <Row Cell="A44:Q44" Style="Header3">
+      <Caption Cell="A44">Принято от клиентов в Москве</Caption>
+      <Values>
+        <Value Cell="Q44" IsFormula="true">ROUND(Q45,0)+ROUND(Q48,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A45:Q45" Style="Header4">
+      <Caption Cell="A45">ВВЛ</Caption>
+      <Values>
+        <Value Cell="Q45" IsFormula="true">ROUND(Q46,0)+ROUND(Q47,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A46:Q46" Style="Header5">
+      <Caption Cell="A46">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q46" IsFormula="false" Data="Common.ReceivedMoscowVVLAeroflot">58</Value>
+      </Values>
+    </Row>
+    <Row Cell="A47:Q47" Style="Header5">
+      <Caption Cell="A47">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q47" IsFormula="false" Data="Common.ReceivedMoscowVVLOther">44</Value>
+      </Values>
+    </Row>
+    <Row Cell="A48:Q48" Style="Header4">
+      <Caption Cell="A48">МВЛ</Caption>
+      <Values>
+        <Value Cell="Q48" IsFormula="true">ROUND(Q49,0)+ROUND(Q50,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A49:Q49" Style="Header5">
+      <Caption Cell="A49">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q49" IsFormula="false" Data="Common.ReceivedMoscowMVLAeroflot">56</Value>
+      </Values>
+    </Row>
+    <Row Cell="A50:Q50" Style="Header5">
+      <Caption Cell="A50">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q50" IsFormula="false" Data="Common.ReceivedMoscowMVLOther">23</Value>
+      </Values>
+    </Row>
+    <Row Cell="A51:Q51" Style="Header3">
+      <Caption Cell="A51">Получено с  других СВХ в Москве</Caption>
+      <Values>
+        <Value Cell="Q51" IsFormula="true">Q52+Q55</Value>
+      </Values>
+    </Row>
+    <Row Cell="A52:Q52" Style="Header4">
+      <Caption Cell="A52">ВВЛ</Caption>
+      <Values>
+        <Value Cell="Q52" IsFormula="true">Q53+Q54</Value>
+      </Values>
+    </Row>
+    <Row Cell="A53:Q53" Style="Header5">
+      <Caption Cell="A53">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q53" IsFormula="false" Data="Common.ReceivedSVHVVLAeroflot">87</Value>
+      </Values>
+    </Row>
+    <Row Cell="A54:Q54" Style="Header5">
+      <Caption Cell="A54">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q54" IsFormula="false" Data="Common.ReceivedSVHVVLOther">54</Value>
+      </Values>
+    </Row>
+    <Row Cell="A55:Q55" Style="Header4">
+      <Caption Cell="A55">МВЛ</Caption>
+      <Values>
+        <Value Cell="Q55" IsFormula="true">Q56+Q57</Value>
+      </Values>
+    </Row>
+    <Row Cell="A56:Q56" Style="Header5">
+      <Caption Cell="A56">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q56" IsFormula="false" Data="Common.ReceivedSVHMVLAeroflot">34</Value>
+      </Values>
+    </Row>
+    <Row Cell="A57:Q57" Style="Header5">
+      <Caption Cell="A57">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q57" IsFormula="false" Data="Common.ReceivedSVHMVLOther">34</Value>
+      </Values>
+    </Row>
+    <Row Cell="A58:Q58" Style="Header3">
+      <Caption Cell="A58">Обслужено рейсов по прилету</Caption>
+      <Values>
+        <Value Cell="Q58" IsFormula="true">SUM(Q59:Q61)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A59:Q59" Style="Header4">
+      <Caption Cell="A59">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q59" IsFormula="false" Data="Common.ReceivedDepartureAeroflot">87</Value>
+      </Values>
+    </Row>
+    <Row Cell="A60:Q60" Style="Header4">
+      <Caption Cell="A60">AirBrigeCargo</Caption>
+      <Values>
+        <Value Cell="Q60" IsFormula="false" Data="Common.ReceivedDepartureBridge">23</Value>
+      </Values>
+    </Row>
+    <Row Cell="A61:Q61" Style="Header4">
+      <Caption Cell="A61">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q61" IsFormula="false" Data="Common.ReceivedDepartureOther">92</Value>
+      </Values>
+    </Row>
+    <Row Cell="A62:Q62" Style="Header2">
+      <Caption Cell="A62">Складские остатки (в тоннах)</Caption>
+      <Values>
+        <Value Cell="Q62" IsFormula="true">ROUND(Q63,0)+ROUND(Q70,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A63:Q63" Style="Header3">
+      <Caption Cell="A63">Импортный груз</Caption>
+      <Values>
+        <Value Cell="Q63" IsFormula="true">ROUND(Q64,0)+ROUND(Q67,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A64:Q64" Style="Header4">
+      <Caption Cell="A64">ВВЛ</Caption>
+      <Values>
+        <Value Cell="Q64" IsFormula="true">ROUND(Q65,0)+ROUND(Q66,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A65:Q65" Style="Header5">
+      <Caption Cell="A65">Готов к выдаче</Caption>
+      <Values>
+        <Value Cell="Q65" IsFormula="false" Data="Common.StockImportVVLReady">23</Value>
+      </Values>
+    </Row>
+    <Row Cell="A66:Q66" Style="Header5">
+      <Caption Cell="A66">В обработке на складе</Caption>
+      <Values>
+        <Value Cell="Q66" IsFormula="false" Data="Common.StockImportVVLProcess">83</Value>
+      </Values>
+    </Row>
+    <Row Cell="A67:Q67" Style="Header4">
+      <Caption Cell="A67">МВЛ</Caption>
+      <Values>
+        <Value Cell="Q67" IsFormula="true">ROUND(Q68,0)+ROUND(Q69,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A68:Q68" Style="Header5">
+      <Caption Cell="A68">Готов к выдаче</Caption>
+      <Values>
+        <Value Cell="Q68" IsFormula="false" Data="Common.StockImportMVLReady">46</Value>
+      </Values>
+    </Row>
+    <Row Cell="A69:Q69" Style="Header5">
+      <Caption Cell="A69">В обработке на складе</Caption>
+      <Values>
+        <Value Cell="Q69" IsFormula="false" Data="Common.StockImportMVLProcess">85</Value>
+      </Values>
+    </Row>
+    <Row Cell="A70:Q70" Style="Header3">
+      <Caption Cell="A70">Экспортный груз</Caption>
+      <Values>
+        <Value Cell="Q70" IsFormula="true">ROUND(Q71,0)+ROUND(Q74,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A71:Q71" Style="Header4">
+      <Caption Cell="A71">ВВЛ</Caption>
+      <Values>
+        <Value Cell="Q71" IsFormula="true">ROUND(Q72,0)+ROUND(Q73,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A72:Q72" Style="Header5">
+      <Caption Cell="A72">Трансферный груз</Caption>
+      <Values>
+        <Value Cell="Q72" IsFormula="false" Data="Common.StockExportVVLTransfer">33</Value>
+      </Values>
+    </Row>
+    <Row Cell="A73:Q73" Style="Header5">
+      <Caption Cell="A73">Экспортный груз</Caption>
+      <Values>
+        <Value Cell="Q73" IsFormula="false" Data="Common.StockExportVVLExport">67</Value>
+      </Values>
+    </Row>
+    <Row Cell="A74:Q74" Style="Header4">
+      <Caption Cell="A74">МВЛ</Caption>
+      <Values>
+        <Value Cell="Q74" IsFormula="true">ROUND(Q75,0)+ROUND(Q76,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A75:Q75" Style="Header5">
+      <Caption Cell="A75">Трансферный груз</Caption>
+      <Values>
+        <Value Cell="Q75" IsFormula="false" Data="Common.StockExportMVLTransfer">44</Value>
+      </Values>
+    </Row>
+    <Row Cell="A76:Q76" Style="Header5">
+      <Caption Cell="A76">Экспортный груз</Caption>
+      <Values>
+        <Value Cell="Q76" IsFormula="false" Data="Common.StockExportMVLExport">23</Value>
+      </Values>
+    </Row>
+  </Table>
+  <HideColumn>2</HideColumn>
+  <HideColumn>3</HideColumn>
+  <HideColumn>4</HideColumn>
+  <HideColumn>5</HideColumn>
+  <HideColumn>6</HideColumn>
+  <HideColumn>7</HideColumn>
+  <HideColumn>8</HideColumn>
+  <HideColumn>9</HideColumn>
+  <HideColumn>10</HideColumn>
+  <HideColumn>11</HideColumn>
+  <HideColumn>12</HideColumn>
+  <HideColumn>13</HideColumn>
+  <HideColumn>14</HideColumn>
+  <HideColumn>15</HideColumn>
+  <HideColumn>16</HideColumn>
+</ReportStructure>
